@@ -1,0 +1,154 @@
+[11:45, 8/26/2024] João sala: !DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Você decide o futuro da IA</title>
+</head>
+
+<body>
+    <div class="caixa-principal">
+        <h1>Você decide o futuro da IA</h1>
+        <div class="tela-inicial">
+            <p>Novembro de 2022, a humanidade se viu em uma realidade perturbadora.
+                De repente, percebemos que as máquinas evoluíram para além do que imaginávamos.
+                Agora, elas escrevem e falam de um jeito tão parecido com humanos que é quase impossível diferenciar
+                
+            </div>
+            <div class="aba-conteudo">
+                <h3 class="aba-conteudo-titulo-principal">Criar um portfolio com os meus 3 melhores projetos</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador"></div>
+            </div>
+            <div class="aba-conteudo">
+                <h3 class="aba-conteudo-titulo-principal">Atualizar meu curriculo com os certificados da Alura</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador"></div>
+            </div
+        </div>
+    </div>
+   
+</section>
+<script src="main.js"></script>  
+</body>
+</html>
+
+possibilidades que o futuro nos reserva.
+                O mundo nunca mais será o mesmo.
+   
+            </div>
+            <div class="aba-conteudo">
+                <h3 class="aba-conteudo-titulo-principal">Criar um portfolio com os meus 3 melhores projetos</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador"></div>
+            </div>
+            <div class="aba-conteudo">
+                <h3 class="aba-conteudo-titulo-principal">Atualizar meu curriculo com os certificados da Alura</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador"></div>
+            </div
+        </div>
+    </div>
+   
+</section>
+<script src="main.js"></script>  
+</body>
+</html>
+
+      <button class="iniciar-btn">Iniciar</button>
+        </div>
+        <div class="caixa-perguntas"></div>
+        <div class="caixa-alternativas"></div>
+        <div class="caixa-resultado">
+            <p class="texto-resultado"></p>
+            <button class="novamente-btn">Jogar novamente</button>
+        </div>
+    </div>
+    <script type="module" src="js/aleatorio.js"></script>
+    <script type="module" src="js/perguntas.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+const botoes = document.querySelectorAll(".botao");
+const textos = document.querySelectorAll(".aba-conteudo");
+
+for(let i=0;i <botoes.length;i++){
+    botoes[i].onclick = function(){
+       
+        for(let j=0;j<botoes.length;j++){
+            botoes[j].classList.remove("ativo");
+            textos[j].classList.remove("ativo");
+        }
+
+        botoes[i].classList.add("ativo");
+        textos[i].classList.add("ativo");
+    }
+}
+
+const contadores = document.querySelectorAll(".contador");
+const tempoObjetivo1 = new Date("2020-10-05T00:00:00");
+const tempoObjetivo2 = new Date("2023-12-05T00:00:00");
+const tempoObjetivo3 = new Date("2023-12-30T00:00:00");
+const tempoObjetivo4 = new Date("2024-02-01T00:00:00");
+
+const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
+
+function calculaTempo(tempoObjetivo) {
+    let tempoAtual = new Date();
+    let tempoFinal = tempoObjetivo - tempoAtual;
+    let segundos = Math.floor(tempoFinal / 1000);
+    let minutos = Math.floor(segundos / 60);
+    let horas = Math.floor(minutos / 60);
+    let dias = Math.floor(horas / 24);
+
+    segundos %= 60;
+    minutos %= 60;
+    horas %= 24;
+    if (tempoFinal > 0){
+        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
+    } else {
+        return "Prazo Finalizado";
+    }
+}
+
+const botoes = document.querySelectorAll(".botao");
+const textos = document.querySelectorAll(".aba-conteudo");
+
+for(let i=0;i <botoes.length;i++){
+    botoes[i].onclick = function(){
+       
+        for(let j=0;j<botoes.length;j++){
+            botoes[j].classList.remove("ativo");
+            textos[j].classList.remove("ativo");
+        }
+
+        botoes[i].classList.add("ativo");
+        textos[i].classList.add("ativo");
+    }
+}
+
+const contadores = document.querySelectorAll(".contador");
+const tempoObjetivo1 = new Date("2020-10-05T00:00:00");
+const tempoObjetivo2 = new Date("2023-12-05T00:00:00");
+const tempoObjetivo3 = new Date("2023-12-30T00:00:00");
+const tempoObjetivo4 = new Date("2024-02-01T00:00:00");
+
+const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
+
+function calculaTempo(tempoObjetivo) {
+    let tempoAtual = new Date();
+    let tempoFinal = tempoObjetivo - tempoAtual;
+function atualizaCronometro(){
+    for (let i=0; i<contadores.length;i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);  
+    }
+}
+
+function comecaCronometro(){
+    atualizaCronometro();
+    setInterval(atualizaCronometro, 1000);
+}
+
+comecaCronometro();
